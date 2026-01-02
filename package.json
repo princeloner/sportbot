@@ -1,0 +1,31 @@
+{
+  "name": "swimming-coach-bot",
+  "version": "1.0.0",
+  "description": "Telegram bot for swimming coach schedule management",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "init-db": "ts-node scripts/initDatabase.ts",
+    "fix-db": "ts-node scripts/fixDatabase.ts",
+    "add-tutorials": "ts-node scripts/addTutorials.ts",
+    "add-media": "ts-node scripts/addMediaTutorials.ts"
+  },
+  "keywords": ["telegram", "bot", "swimming", "coach"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "telegraf": "^4.15.0",
+    "mongoose": "^8.0.0",
+    "dotenv": "^16.3.1",
+    "node-cron": "^3.0.3",
+    "date-fns": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "@types/node-cron": "^3.0.11",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^5.3.0"
+  }
+}

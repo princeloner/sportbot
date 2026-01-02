@@ -1,0 +1,31 @@
+version: '3.8'
+
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: swimming-bot-mongodb
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_DATABASE=swimming-coach-bot
+
+  bot:
+    build: .
+    container_name: swimming-coach-bot
+    restart: unless-stopped
+    depends_on:
+      - mongodb
+    environment:
+      - BOT_TOKEN=${BOT_TOKEN}
+      - MONGODB_URI=mongodb://mongodb:27017/swimming-coach-bot
+      - ADMIN_IDS=${ADMIN_IDS}
+      - TZ=${TZ}
+    volumes:
+      - ./src:/app/src
+      - ./logs:/app/logs
+
+volumes:
+  mongodb_data:
