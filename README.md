@@ -242,11 +242,4 @@ MIT
 
 Если возникли вопросы или проблемы, создайте Issue в репозитории.
 # sport-pool-bot
-# sport-pool-bot
-# sport-pool-bot
-# sport-pool-bot
-# sport-pool-bot
-# sport-pool-bot
-# sportbot
-# sportbot
-# sportbot
+
